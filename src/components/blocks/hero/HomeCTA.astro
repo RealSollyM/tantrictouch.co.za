@@ -1,0 +1,57 @@
+---
+// Home page CTA Section
+// ------------
+// Description: A centered call to action section that contains: a title, text, a user review snippet, a button and a image.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import { Image } from 'astro:assets'
+import Button from '../../ui/Button.astro'
+
+// Content
+// - Hero Image
+import heroImage from '../../../assets/hero-01.png'
+// - Avatars
+import user1 from '../../../assets/avatars/avatar-01.webp'
+import user2 from '../../../assets/avatars/avatar-02.webp'
+import user3 from '../../../assets/avatars/avatar-03.webp'
+import AvatarChipNotification from '../../ui/AvatarChipNotification.astro'
+
+const avatars = [
+	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
+	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
+	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
+]
+
+const satisfiedCustomers = "30K+";
+---
+
+<Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<AvatarChipNotification avatars={avatars}>
+				<strong>{ satisfiedCustomers }</strong> satisfied customers
+			</AvatarChipNotification>
+			<h1>Tantric Touch is a spa that focuses mostly on <strong>massages</strong>.</h1>
+
+			<p class="pb-0 text-lg">Massage is a therapy used to promote healing and wellness. It promotes relaxation, relieves the negative effects of stress and tension on the mind and body. It improves blood circulation; reduces stiffness, pain in the joints and muscles, encourages a general feeling of well-being, both mentally and physically.</p>
+			<Button size="lg" link="/contact">Book a Consultation</Button>
+		</Col>
+		<Col span="2" />
+		<Col span="2" />
+		<Col span="8">
+			<Image
+				src={heroImage}
+				alt="Foxi. The tailwind astro theme"
+				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
+				format="webp"
+			/></Col
+		>
+		<Col span="2" />
+	</Row>
+</Section>

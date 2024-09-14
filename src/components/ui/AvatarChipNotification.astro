@@ -1,0 +1,12 @@
+---
+import AvatarGroup from "./AvatarGroup.astro";
+import ChipNotification from "./ChipNotification.astro";
+
+const {avatars} = Astro.props;
+---
+<ChipNotification radius="rounded-full" classes="mb-6">
+    <slot />
+    {avatars && avatars.length > 0 && (
+        <AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
+    )}
+</ChipNotification>
