@@ -18,25 +18,26 @@ import Highlight from '../../ui/Highlight.astro'
 // Content
 import ctaImage from '../../../assets/cta-dark-bg.webp'
 import badge from '../../../assets/badge.svg'
+
+const data = {
+	title: 'Join Over 2,000 Satisfied Customers!',
+	text: 'Discover why thousands of professionals trust our platform to streamline their workflow and enhance productivity. Get started today and see the difference for yourself!',
+	bg: ctaImage,
+	button: {
+		text: 'Book Now!',
+		link: '/contact'
+	}
+}
 ---
 
 <Section>
 	<Row>
 		<Col span="1" />
 		<Col span="10">
-			<CTA
-				title="Join Over 30,000 Satisfied Users!"
-				text="Discover why thousands of professionals trust our platform to streamline their workflow and enhance productivity. Get started today and see the difference for yourself!"
-				mode="dark"
-				bg={ctaImage}
-			>
-				<ChipNotification radius="rounded-full" classes="mb-6 box">
-					<Image src={badge} alt="Product of the Year" class="h-12 w-12" slot="button" />
-					#1 Product of the Year, <Highlight classes="ml-2">Product Hunt</Highlight>
-				</ChipNotification>
-				<Button size="lg" style="primary"> Get started now! </Button>
+			<CTA title={data.title} text={data.text} mode="dark" bg={data.bg}>
+				<Button size="lg" style="primary" link={data.button.link}> {data.button.text} </Button>
 			</CTA>
-			<Col span="1" />
 		</Col>
+		<Col span="1" />
 	</Row>
 </Section>

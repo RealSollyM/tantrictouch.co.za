@@ -8,16 +8,11 @@
 import TextImage from '../basic/TextImage.astro'
 
 // Content
-import highlight01 from '../../../assets/highlights/highlight-01.svg'
-import highlight01mobile from '../../../assets/highlights/highlight-01-mobile.svg'
-import highlight02 from '../../../assets/highlights/highlight-02.svg'
-import highlight02mobile from '../../../assets/highlights/highlight-02-mobile.svg'
-import highlight03 from '../../../assets/highlights/highlight-03.svg'
-import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.svg'
-import highlight04 from '../../../assets/highlights/highlight-04.svg'
-import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
+import service01 from '../../../assets/services/holistic-massage.jpg'
+import service02 from '../../../assets/services/tantric-massage.jpg'
+import service03 from '../../../assets/services/couple-massage.jpg'
 
-type HighlightBlock = {
+type ServiceBlock = {
 	title: string
 	text: string
 	image: any
@@ -26,48 +21,37 @@ type HighlightBlock = {
 	imageHeight: number
 	imagePosition: 'left' | 'right'
 }
-const highlightBlocks: HighlightBlock[] = [
+
+const serviceBlocks: ServiceBlock[] = [
 	{
 		title: '<strong>Holistic</strong> Massage',
 		text: 'Holistic massage is a therapeutic application of touch that is also a supportive, relaxing treatment that encourages the mind to slow down whilst energy is increased.<br><br>Holistic massage benefits the mind, body and spirit. Massage relaxes taut muscles, aids lympathic drainage, releases toxins and benefits the "whole" in many other positive ways. Physical and emotional stress can be reduced through therapeutic touch and a myriad of other restrictive problems can also be alleviated.',
-		image: highlight01,
-		imageWidth: highlight01.width,
-		imageHeight: highlight01.height,
-		mobileImage: highlight01mobile,
+		image: service01,
+		imageWidth: service01.width * 2,
+		imageHeight: service01.height * 2,
 		imagePosition: 'right'
 	},
 	{
-		title: 'Advanced <strong>Automation</strong> Tools',
-		text: 'Automate repetitive tasks and streamline your workflow with our advanced automation tools. Save time and reduce errors by leveraging automated task assignments, workflow templates, and seamless integration with popular apps and services.',
-		image: highlight02,
-		mobileImage: highlight02mobile,
-		imageWidth: highlight02.width,
-		imageHeight: highlight02.height,
+		title: '<strong>Tantric</strong> Massage',
+		text: 'The massage that adds energy healing and tantric approach of the ecstasy of a nurturing and relaxing sensual massage.<br><br>Tantric massage adds energy healing and tantric coaching to the ecstasy of receiving a nurturing and awakening sensual massage. It creates an environment in which you can release stress and feel more alive in your body while staying fully present to your sexual energy.',
+		image: service02,
+		imageWidth: service02.width * 2,
+		imageHeight: service02.height * 2,
 		imagePosition: 'left'
 	},
 	{
-		title: '<strong>Effective</strong> Team Collaboration',
-		text: 'Enhance team communication and collaboration with our seamless tools. Keep everyone on the same page and ensure efficient project execution through real-time messaging, shared document editing, and task comments. ',
-		image: highlight03,
-		mobileImage: highlight03mobile,
-		imageWidth: highlight03.width,
-		imageHeight: highlight03.height,
+		title: '<strong>Couple</strong> Massage',
+		text: 'It is sensual massage in which the therapist(s) perform basic body work to relax the muscles and set a relaxed mood.<br><br>This type of massage for couples is aimed at relaxing the mind, body and soul of two people, simultaneously, through touching while improving their energies and releasing toxins at the same time. It can also be taught to a couple to further apply it in the comfort of their home.',
+		image: service03,
+		imageWidth: service03.width * 2,
+		imageHeight: service03.height * 2,
 		imagePosition: 'right'
-	},
-	{
-		title: 'Robust Data <strong>Security</strong>',
-		text: 'Protect your data with our robust security features. We prioritize your privacy and security to ensure that your information is always safe. With end-to-end encryption, role-based access control, and regular security audits.',
-		image: highlight04,
-		mobileImage: highlight04mobile,
-		imageWidth: highlight04.width,
-		imageHeight: highlight04.height,
-		imagePosition: 'left'
 	}
 ]
 ---
 
 {
-	highlightBlocks.map((highlight, key) => (
+	serviceBlocks.map((highlight, key) => (
 		<TextImage
 			id={`highlight-${key}`}
 			title={highlight.title}
@@ -77,7 +61,7 @@ const highlightBlocks: HighlightBlock[] = [
 			imageHeight={highlight.imageHeight}
 			mobileImage={highlight.mobileImage}
 			imagePosition={highlight.imagePosition}
-			classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
+			classes={key === 0 ? '!pb-0' : key === serviceBlocks.length - 1 ? '!pt-0' : '!py-50'}
 		/>
 	))
 }
